@@ -1,10 +1,11 @@
 import React from 'react';
 
-class person extends Component {
-    state = {  } 
-    render() { 
-        return ();
-    }
+const person = ({firstname,age}) => {
+    return ( 
+        <div>
+            <h2>{`${firstname} ${age}`}</h2>
+        </div>
+     );
 }
  
 export default person;
