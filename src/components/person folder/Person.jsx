@@ -1,6 +1,6 @@
 import React from 'react';
 
-const person = ({firstname,age}) => {
+const Person = ({firstname,age}) => {
     return ( 
         <div>
             <h2>{`${firstname} ${age}`}</h2>
@@ -8,7 +8,7 @@ const person = ({firstname,age}) => {
      );
 }
  
-export default person;
+export default Person;
 
 
 
