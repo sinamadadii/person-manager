@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
-import Persons from './components/person/Persons';
+import person from './components/person folder/Person';
+import Person from './components/person folder/Person';
+
 
 class App extends Component {
     state = { 
         person: [
             {firstname:'sina',age:12},
             {firstname:'mmd',age:8},
-            {firstname:'riza',age:7},
             {firstname:'salar',age:3}
         ]
     } 
+
+    handle = () => {
+        this.setState({
+            person: [
+                {firstname:'fvdxdv',age:12},
+                {firstname:'mvdsadwmd',age:8},
+                {firstname:'sereyalar',age:3}
+            ]
+        });
+
+    }
     render() { 
-        // const {Persons}=this.state;
+        const {person}=this.state;
         return (
             <div>
                 <h1>hi</h1>
-                <Persons Persons={this.state.Persons} />
+
+              {person.map(person => (
+                <Person firstname={person.firstname} age={person.age} />
+              ))} 
+              <button onClick={this.handle}>change it</button>
             </div>
         );
     }
