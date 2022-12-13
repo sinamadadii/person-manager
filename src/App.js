@@ -11,8 +11,9 @@ class App extends Component {
     } 
 
     render() {
+        const style = {textAlign:'center'}
         return (
-            <div>
+            <div style={style}>
                 <h1>hi</h1>
             <Persons persons={this.state.person} />
             </div>
