@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Person from './components/person folder/Person';
 import Persons from './components/person folder/Persons';
 
 class App extends Component {
@@ -7,15 +8,38 @@ class App extends Component {
             {firstname:'sina',age:12},
             {firstname:'mmd',age:8},
             {firstname:'salar',age:3}
-        ]
+        ],
+        showPersons:false
     } 
 
+    handle = ()=>{
+        this.setState({showPersons: !this.state.showPersons})
+    }
+
     render() {
+
         const style = {textAlign:'center'}
+
+        const btnstyle ={
+            padding:"1em",
+            backgroundColor:"yellow"
+        }
+
+        let Person = null;
+        
+        if (this.state.showPersons) {
+            Person = <Persons persons={this.state.person} />;
+        }
+
+
         return (
             <div style={style}>
-                <h1>hi</h1>
-            <Persons persons={this.state.person} />
+                <h1>مدیریت کننده اشخاص</h1>
+                <h3> تعداد اشخاص {this.state.person.length} نفر میباشد </h3>
+            
+            {Person}
+
+            <button onClick={this.handle} style={btnstyle}>نمایش اشخاص </button>
             </div>
         );
     }
