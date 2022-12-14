@@ -5,9 +5,9 @@ import Persons from './components/person folder/Persons';
 class App extends Component {
     state = { 
         person: [
-            {firstname:'sina',age:12},
-            {firstname:'mmd',age:8},
-            {firstname:'salar',age:3}
+            {id : 1 ,firstname:'sina',age:12},
+            {id : 2 ,firstname:'mmd',age:8},
+            {id : 3 ,firstname:'salar',age:3}
         ],
         showPersons:false
     } 
