@@ -15,6 +15,12 @@ class App extends Component {
     handle = ()=>{
         this.setState({showPersons: !this.state.showPersons})
     }
+// ... copy a array to another array
+    handeldelete = id =>{
+        const persons = [...this.state.persons]
+        const filteredpersons = persons.filter( p => p.id !== id );
+    } 
+
 
     render() {
 
