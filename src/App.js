@@ -35,7 +35,8 @@ class App extends Component {
             person = (
                 <Persons
                     persons={this.state.persons}
-                    deletePerson={this.deletePerson} />);
+                    deletePerson={this.deletePerson} />
+            );
         }
 
 
