@@ -17,7 +17,8 @@ class App extends Component {
     }
     deletePerson = id => {
         const persons = [...this.state.persons];
-        const filteredPersons = {}
+        const filteredPersons = persons.filter(p => p.id !== id);
+        this.setState({ persons: filteredPersons });
     }
     render() {
 
@@ -31,7 +32,10 @@ class App extends Component {
         let person = null;
 
         if (this.state.showPersons) {
-            person = <Persons persons={this.state.persons} />;
+            person = (
+                <Persons
+                    persons={this.state.persons}
+                    deletePerson={this.deletePerson} />);
         }
 
 

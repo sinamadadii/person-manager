@@ -8,7 +8,8 @@ const Persons = ({ persons }) => {
                 <Person
                     key={person.id}
                     firstname={person.firstname}
-                    age={person.age} />
+                    age={person.age}
+                    deletePerson={() => deletePerson(person.id)} />
             ))}
         </div>
     );
