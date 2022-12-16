@@ -1,51 +1,48 @@
 import React, { Component } from 'react';
-import Person from './components/person folder/Person';
 import Persons from './components/person folder/Persons';
 
 class App extends Component {
-    state = { 
-        person: [
-            {id : 1 ,firstname:'sina',age:12},
-            {id : 2 ,firstname:'mmd',age:8},
-            {id : 3 ,firstname:'salar',age:3}
+    state = {
+        persons: [
+            { id: 1, firstname: 'sina', age: 12 },
+            { id: 2, firstname: 'mmd', age: 8 },
+            { id: 3, firstname: 'salar', age: 3 }
         ],
-        showPersons:false
-    } 
-
-    handle = ()=>{
-        this.setState({showPersons: !this.state.showPersons})
+        showPersons: false
     }
-// ... copy a array to another array
-    handeldelete = id =>{
-        const persons = [...this.state.persons]
-        const filteredpersons = persons.filter( p => p.id !== id );
-    } 
 
+    handle = () => {
+        this.setState({ showPersons: !this.state.showPersons })
 
+    }
+    deletePerson = id => {
+        const persons = [...this.state.persons];
+        const filteredPersons = {}
+    }
     render() {
 
-        const style = {textAlign:'center'}
+        const style = { textAlign: 'center' }
 
-        const btnstyle ={
-            padding:"1em",
-            backgroundColor:"yellow"
+        const btnstyle = {
+            padding: "1em",
+            backgroundColor: "yellow"
         }
 
-        let Person = null;
-        
+        let person = null;
+
         if (this.state.showPersons) {
-            Person = <Persons persons={this.state.person} />;
+            person = <Persons persons={this.state.persons} />;
         }
 
 
         return (
             <div style={style}>
                 <h1>مدیریت کننده اشخاص</h1>
-                <h3> تعداد اشخاص {this.state.person.length} نفر میباشد </h3>
-            
-            {Person}
+                <h3> تعداد اشخاص {this.state.persons.length} نفر میباشد </h3>
 
-            <button onClick={this.handle} style={btnstyle}>نمایش اشخاص </button>
+                {person}
+
+                <button onClick={this.handle} style={btnstyle}>نمایش اشخاص </button>
             </div>
         );
     }
@@ -55,3 +52,4 @@ export default App;
 
 
 
+//......................
