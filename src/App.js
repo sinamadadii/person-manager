@@ -15,10 +15,11 @@ class App extends Component {
         this.setState({ showPersons: !this.state.showPersons })
 
     }
-    deletePerson = id => {
+    personDelete = id => {
         const persons = [...this.state.persons];
         const filteredPersons = persons.filter(p => p.id !== id);
-        this.setState({ persons: filteredPersons });
+        this.setState({ persons: filteredPersons })
+
     }
     render() {
 
@@ -35,7 +36,8 @@ class App extends Component {
             person = (
                 <Persons
                     persons={this.state.persons}
-                    deletePerson={this.deletePerson} />
+                    personDelete={this.personDelete}
+                />
             );
         }
 

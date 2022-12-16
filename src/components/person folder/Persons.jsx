@@ -1,7 +1,7 @@
 import React from 'react';
 import Person from './Person';
 
-const Persons = ({ persons, deletePerson }) => {
+const Persons = ({ persons, personDelete }) => {
     return (
         <div>
             {persons.map(person => (
@@ -9,7 +9,8 @@ const Persons = ({ persons, deletePerson }) => {
                     key={person.id}
                     firstname={person.firstname}
                     age={person.age}
-                    deletePerson={() => deletePerson(person.id)} />
+                    personDelete={() => personDelete(person.id)}
+                />
             ))}
         </div>
     );
