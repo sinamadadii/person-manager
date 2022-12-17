@@ -4,9 +4,9 @@ import Persons from './components/person folder/Persons';
 class App extends Component {
     state = {
         persons: [
-            { id: 1, firstname: 'sina', age: 12 },
-            { id: 2, firstname: 'mmd', age: 8 },
-            { id: 3, firstname: 'salar', age: 3 }
+            { id: 1, fullName: 'sina', age: 12 },
+            { id: 2, fullName: 'mmd', age: 8 },
+            { id: 3, fullName: 'salar', age: 3 }
         ],
         showPersons: false
     }
@@ -20,6 +20,7 @@ class App extends Component {
         const filteredPersons = persons.filter(p => p.id !== id);
         this.setState({ persons: filteredPersons });
     }
+
 
     render() {
 
