@@ -18,9 +18,9 @@ class App extends Component {
     personDelete = id => {
         const persons = [...this.state.persons];
         const filteredPersons = persons.filter(p => p.id !== id);
-        this.setState({ persons: filteredPersons })
-
+        this.setState({ persons: filteredPersons });
     }
+
     render() {
 
         const style = { textAlign: 'center' }
@@ -54,6 +54,7 @@ class App extends Component {
         );
     }
 }
+
 
 export default App;
 
