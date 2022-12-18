@@ -10,7 +10,7 @@ class App extends Component {
         ],
         showPersons: false
     }
-
+    //show
     handle = () => {
         this.setState({ showPersons: !this.state.showPersons })
 
@@ -20,7 +20,19 @@ class App extends Component {
         const filteredPersons = persons.filter(p => p.id !== id);
         this.setState({ persons: filteredPersons });
     }
+    personEdit = (event, id) => {
+        //renaming persons to allPersons
+        const { persons: allPersons } = this.state;
+        const personIndex = allPersons.findIndex(p => p.id === id);
+        const person = allPersons[personIndex];
+        person.fullName = event.target.value;
+        console.log(event);
 
+        const persons = [...allPersons]
+
+        persons[personIndex] = person;
+        this.setState({ persons })
+    }
 
     render() {
 
@@ -38,6 +50,7 @@ class App extends Component {
                 <Persons
                     persons={this.state.persons}
                     personDelete={this.personDelete}
+                    personEdit={this.personEdit}
                 />
             );
         }

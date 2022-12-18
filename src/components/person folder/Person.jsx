@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Person = ({ fullName, age, personDelete }) => {
+const Person = ({ fullName, age, personDelete, personEdit }) => {
     return (
         <div>
             <h2>{`${fullName} ${age}`}</h2>
             <button onClick={personDelete}>Delete</button>
+            <input type="text" placeholder={fullName} onChange={personEdit} />
         </div>
     );
 }
