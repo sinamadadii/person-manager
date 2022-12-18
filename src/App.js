@@ -21,18 +21,35 @@ class App extends Component {
         this.setState({ persons: filteredPersons });
     }
     personEdit = (event, id) => {
-        //renaming persons to allPersons
         const { persons: allPersons } = this.state;
         const personIndex = allPersons.findIndex(p => p.id === id);
         const person = allPersons[personIndex];
         person.fullName = event.target.value;
         console.log(event);
 
-        const persons = [...allPersons]
-
+        const persons = [...allPersons];
         persons[personIndex] = person;
-        this.setState({ persons })
+        this.setState({ persons });
     }
+    // personEdit = (event, id) => {
+    //     //renaming persons to allPersons
+    //     const { persons: allPersons } = this.state;
+    //     const personIndex = allPersons.findIndex(p => p.id === id);
+    //     const person = allPersons[personIndex];
+    //     person.fullName = event.target.value;
+    //     console.log(event);
+
+    //     const persons = [...allPersons];
+    //     persons[personIndex] = person;
+    //     this.setState({ persons })
+    // }
+    // newPerson = () => {
+    //     const persons = [...this.state.persons];
+    //     const person = {
+    //         id: Math.floor(Math.random(1000))
+    //     }
+
+    // }
 
     render() {
 
