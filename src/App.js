@@ -25,22 +25,11 @@ class App extends Component {
         const { persons: allPersons } = this.state;
         const personIndex = allPersons.findIndex(p => p.id === id);
         const person = allPersons[personIndex];
-
+        person.fullName = event.target.value;
+        const persons = [...allPersons];
+        persons[personIndex] = person;
+        this.setState({ persons });
     }
-
-
-    // personEdit = (event, id) => {
-    //     const { persons: allPersons } = this.state;
-    //     const personIndex = allPersons.findIndex(p => p.id === id);
-    //     const person = allPersons[personIndex];
-    //     person.fullName = event.target.value;
-    //     console.log(event);
-
-    //     const persons = [...allPersons];
-    //     persons[personIndex] = person;
-    //     this.setState({ persons });
-    // }
-
     // newPerson = () => {
     //     const persons = [...this.state.persons];
     //     const person = {
