@@ -36,7 +36,6 @@ class App extends Component {
         };
         persons.push(person);
         this.setState({ persons, person: "" })
-
     }
 
     setPerson = event => {
@@ -70,7 +69,7 @@ class App extends Component {
                 <h1>مدیریت کننده اشخاص</h1>
                 <h3> تعداد اشخاص {this.state.persons.length} نفر میباشد </h3>
                 <div>
-                    <input placeholder='creat new person' type="text" onChange={this.setPerson} />
+                    <input placeholder='creat new person' type="text" onChange={this.setPerson} value={this.state.person} />
                     <button onClick={this.newPerson}>Add </button>
                 </div>
                 {person}
