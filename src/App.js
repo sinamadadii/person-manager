@@ -40,7 +40,7 @@ class App extends Component {
     }
 
     setPerson = event => {
-        this.setPerson({ person: event.target.value });
+        this.setState({ person: event.target.value });
     }
 
     render() {
