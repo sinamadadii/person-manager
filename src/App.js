@@ -5,7 +5,7 @@ class App extends Component {
     state = {
         persons: [],
         person: "",
-        showPersons: false
+        showPersons: true
     }
     //show
     handle = () => {
@@ -44,7 +44,7 @@ class App extends Component {
 
     render() {
 
-        const style = { textAlign: 'center' }
+        // const style = { textAlign: 'center' }
 
         const btnstyle = {
             padding: "1em",
@@ -65,15 +65,31 @@ class App extends Component {
 
 
         return (
-            <div style={style}>
-                <h1>مدیریت کننده اشخاص</h1>
-                <h3> تعداد اشخاص {this.state.persons.length} نفر میباشد </h3>
-                <div>
-                    <input placeholder='creat new person' type="text" onChange={this.setPerson} value={this.state.person} />
-                    <button onClick={this.newPerson}>Add </button>
+            <div className='rtl text-center'>
+                <div className='alert alert-info'>
+                    <h2>مدیریت کننده اشخاص</h2>
+                </div>
+                <div className='alert alert-alert-success'>
+                    <h3> تعداد اشخاص <span className='badge badge-primary'>{this.state.persons.length}</span> نفر میباشد </h3>
+                </div>
+
+
+                <div className='mb-2 p-2'>
+                    <form className='form-inline justify-content-center' onSubmit={event => event.preventDefault()}>
+                        <div className='input-group w-25'>
+                            <input
+                                className='form-control'
+                                placeholder='یه اسم بهم بده !'
+                                type="text" onChange={this.setPerson}
+                                value={this.state.person} />
+                            <div className='input-group-append'>
+                                <button onClick={this.newPerson} className='btn btn-success  fa fa-plus-circle '></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 {person}
-                <button onClick={this.handle} style={btnstyle}>نمایش اشخاص </button>
+                <button onClick={this.handle} className='btn btn-primary'>نمایش </button>
             </div>
         );
     }
