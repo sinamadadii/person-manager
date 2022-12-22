@@ -44,13 +44,6 @@ class App extends Component {
 
     render() {
 
-        // const style = { textAlign: 'center' }
-
-        const btnstyle = {
-            padding: "1em",
-            backgroundColor: "yellow"
-        }
-
         let person = null;
 
         if (this.state.showPersons) {
