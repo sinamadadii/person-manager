@@ -76,13 +76,17 @@ class App extends Component {
                                 type="text" onChange={this.setPerson}
                                 value={this.state.person} />
                             <div className='input-group-append'>
-                                <button onClick={this.newPerson} className='btn btn-success  fa fa-plus-circle '></button>
+                                <button
+                                    onClick={this.newPerson}
+                                    className='btn btn-success  fa fa-plus-circle '></button>
                             </div>
                         </div>
                     </form>
                 </div>
                 {person}
-                <button onClick={this.handle} className='btn btn-primary'>نمایش </button>
+                <button
+                    onClick={this.handle}
+                    className={this.state.showPersons ? 'btn btn-danger' : 'btn btn-primary'}>نمایش </button>
             </div>
         );
     }
