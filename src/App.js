@@ -61,7 +61,11 @@ class App extends Component {
         return (
             <div className='rtl text-center'>
                 {/* Alert */}
-                <Header personsLength={this.state.persons.length} />
+                <Header
+                    personsLength={this.state.persons.length}
+                    appTitle={this.props.Title}
+
+                />
 
                 <div className='mb-2 p-2'>
                     <form className='form-inline justify-content-center' onSubmit={event => event.preventDefault()}>
