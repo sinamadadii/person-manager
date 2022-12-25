@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './common/Header';
 import Persons from './components/person folder/Persons';
 
 class App extends Component {
@@ -59,13 +60,8 @@ class App extends Component {
 
         return (
             <div className='rtl text-center'>
-                <div className='alert alert-info'>
-                    <h2>مدیریت کننده اشخاص</h2>
-                </div>
-                <div className='alert alert-alert-success'>
-                    <h3> تعداد اشخاص <span className='badge badge-primary'>{this.state.persons.length}</span> نفر میباشد </h3>
-                </div>
-
+                {/* Alert */}
+                <Header personsLength={this.state.persons.length} />
 
                 <div className='mb-2 p-2'>
                     <form className='form-inline justify-content-center' onSubmit={event => event.preventDefault()}>
@@ -94,7 +90,5 @@ class App extends Component {
 
 
 export default App;
-
-
 
 //......................
