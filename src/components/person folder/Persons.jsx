@@ -8,7 +8,7 @@ const Persons = () => {
         //    <SimpleContext.Consumer>
         //        {context => (
         <div>
-            {context.state.persons.map(person => (
+            {context.persons.map(person => (
                 <Person
                     key={person.id}
                     fullName={person.fullName}

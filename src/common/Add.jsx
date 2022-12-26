@@ -13,7 +13,7 @@ const Add = () => {
                         className='form-control'
                         placeholder='یه اسم بهم بده !'
                         type="text" onChange={context.setPerson}
-                        value={context.state.person} />
+                        value={context.person} />
                     <div className='input-group-append'>
                         <button
                             onClick={context.newPerson}

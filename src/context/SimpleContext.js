@@ -2,7 +2,8 @@ import React, { createContext } from 'react';
 
 const SimpleContext = createContext({
     //magadire pish farz ra fgt baraye intelisens midim
-    state: {},
+    persons: {},
+    person: '',
     personDelete: () => { },
     personEdit: () => { },
     newPerson: () => { },

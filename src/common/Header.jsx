@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import SimpleContext from './../context/SimpleContext';
 
-const Header = () => {
+const Header = ({ appTitle }) => {
     const context = useContext(SimpleContext);
     return (
         // <SimpleContext.Consumer>
@@ -9,10 +9,10 @@ const Header = () => {
         /* {context => ( */
         <div className='rtl text-center'>
             <div className='alert alert-info'>
-                <h2>{context.state.appTitle}</h2>
+                <h2>{appTitle}</h2>
             </div>
             <div className='alert alert-alert-success'>
-                <h3> تعداد اشخاص <span className='badge badge-primary'>{context.state.persons.length}</span> نفر میباشد </h3>
+                <h3> تعداد مخاطبین <span className='badge badge-primary'>{context.persons.length}</span> نفر میباشد </h3>
             </div>
         </div>
         /* )} */
