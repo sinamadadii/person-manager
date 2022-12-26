@@ -52,11 +52,7 @@ class App extends Component {
 
         if (this.state.showPersons) {
             person = (
-                <Persons
-                    persons={this.state.persons}
-                    personDelete={this.personDelete}
-                    personEdit={this.personEdit}
-                />
+                <Persons />
             );
         }
 
