@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+
 import Header from './common/Header';
 import Persons from './components/person folder/Persons';
-
+import SimpleContext from './context/SimpleContext';
 class App extends Component {
     state = {
         persons: [],
         person: "",
-        showPersons: true
+        showPersons: true,
+        appTitle: 'مدیریت کننده اشخاص'
     }
     //show
     handle = () => {
@@ -59,35 +61,44 @@ class App extends Component {
 
 
         return (
-            <div className='rtl text-center'>
-                {/* Alert */}
-                <Header
-                    personsLength={this.state.persons.length}
-                    appTitle={this.props.Title}
+            <SimpleContext.Provider
+                value={{
+                    state: this.state,
+                    handle: this.handle,
+                    personDelete: this.personDelete,
+                    personEdit: this.personEdit,
+                    newPerson: this.newPerson,
+                    setPerson: this.setPerson
+                }}>
+                <div className='rtl text-center'>
+                    {/* Alert */}
+                    <Header
+                    // personsLength={this.state.persons.length}
+                    // appTitle={this.state.appTitle}
+                    />
 
-                />
-
-                <div className='mb-2 p-2'>
-                    <form className='form-inline justify-content-center' onSubmit={event => event.preventDefault()}>
-                        <div className='input-group w-25'>
-                            <input
-                                className='form-control'
-                                placeholder='یه اسم بهم بده !'
-                                type="text" onChange={this.setPerson}
-                                value={this.state.person} />
-                            <div className='input-group-append'>
-                                <button
-                                    onClick={this.newPerson}
-                                    className='btn btn-success  fa fa-plus-circle '></button>
+                    <div className='mb-2 p-2'>
+                        <form className='form-inline justify-content-center' onSubmit={event => event.preventDefault()}>
+                            <div className='input-group w-25'>
+                                <input
+                                    className='form-control'
+                                    placeholder='یه اسم بهم بده !'
+                                    type="text" onChange={this.setPerson}
+                                    value={this.state.person} />
+                                <div className='input-group-append'>
+                                    <button
+                                        onClick={this.newPerson}
+                                        className='btn btn-success  fa fa-plus-circle '></button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    {person}
+                    <button
+                        onClick={this.handle}
+                        className={this.state.showPersons ? 'btn btn-danger' : 'btn btn-primary'}>نمایش </button>
                 </div>
-                {person}
-                <button
-                    onClick={this.handle}
-                    className={this.state.showPersons ? 'btn btn-danger' : 'btn btn-primary'}>نمایش </button>
-            </div>
+            </SimpleContext.Provider>
         );
     }
 }

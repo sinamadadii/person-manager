@@ -1,5 +1,12 @@
 import React, { createContext } from 'react';
 
-createContext(
+const SimpleContext = createContext({
+    //magadire pish farz ra fgt baraye intelisens midim
+    state: {},
+    personDelete: () => { },
+    personEdit: () => { },
+    newPerson: () => { },
+    setPerson: () => { },
+});
 
-)
+export default SimpleContext;
