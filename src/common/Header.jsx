@@ -1,7 +1,7 @@
 import React from 'react';
 import SimpleContext from './../context/SimpleContext';
 
-const Header = ({ personsLength, appTitle }) => {
+const Header = () => {
     return (
         <SimpleContext.Consumer>
             {/* u can rename context to anything in below */}

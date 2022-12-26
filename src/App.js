@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Add from './common/Add';
 
 import Header from './common/Header';
 import Persons from './components/person folder/Persons';
@@ -72,31 +73,13 @@ class App extends Component {
                 }}>
                 <div className='rtl text-center'>
                     {/* Alert */}
-                    <Header
-                    // personsLength={this.state.persons.length}
-                    // appTitle={this.state.appTitle}
-                    />
-
-                    <div className='mb-2 p-2'>
-                        <form className='form-inline justify-content-center' onSubmit={event => event.preventDefault()}>
-                            <div className='input-group w-25'>
-                                <input
-                                    className='form-control'
-                                    placeholder='یه اسم بهم بده !'
-                                    type="text" onChange={this.setPerson}
-                                    value={this.state.person} />
-                                <div className='input-group-append'>
-                                    <button
-                                        onClick={this.newPerson}
-                                        className='btn btn-success  fa fa-plus-circle '></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <Header />
+                    <Add />
                     {person}
                     <button
                         onClick={this.handle}
-                        className={this.state.showPersons ? 'btn btn-danger' : 'btn btn-primary'}>نمایش </button>
+                        className={this.state.showPersons ? 'btn btn-danger' : 'btn btn-primary'}>نمایش
+                    </button>
                 </div>
             </SimpleContext.Provider>
         );
