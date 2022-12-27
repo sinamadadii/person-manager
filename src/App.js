@@ -10,6 +10,9 @@ const App = () => {
     const [getPersons, setPersons] = useState([]);
     const [getSinglePerson, setSinglePerson] = useState('');
     const [getShowPersons, setShowPersons] = useState(true);
+    // const [getPersons, setPersons] = useState([]);
+    // const [getSinglePerson, setSinglePerson] = useState('');
+    // const [getShowPersons, setShowPersons] = useState(true);
 
     //showPerson
     const handle = () => {
