@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import Add from './common/Add';
 import Header from './common/Header';
 import Persons from './components/person folder/Persons';
@@ -66,16 +66,18 @@ const App = () => {
                 newPerson: newPerson,
                 setPerson: setPerson
             }}>
-            <div className='rtl text-center'>
-                {/* Alert */}
-                <Header appTitle='مدیریت کننده مخاطبین' />
-                <Add />
-                {person}
-                <button
-                    onClick={handle}
-                    className={getShowPersons ? 'btn btn-danger' : 'btn btn-primary'}>نمایش
-                </button>
-            </div>
+            <Fragment>
+                <div className='rtl text-center'>
+                    {/* Alert */}
+                    <Header appTitle='مدیریت کننده مخاطبین' />
+                    <Add />
+                    {person}
+                    <button
+                        onClick={handle}
+                        className={getShowPersons ? 'btn btn-danger' : 'btn btn-primary'}>نمایش
+                    </button>
+                </div>
+            </Fragment>
         </SimpleContext.Provider>
     );
 }
